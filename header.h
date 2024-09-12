@@ -1,7 +1,10 @@
+#ifndef HEADER
+#define HEADER
+
+
 #include <stdio.h>            
 #include <stdlib.h>      
 #include <string.h>
-
 
 typedef struct node {
 	char  name[64];       // node's name string
@@ -9,3 +12,5 @@ typedef struct node {
 	struct node *child, *sibling, *parent;
 	// other fields if needed
 } NODE;
+
+#endif

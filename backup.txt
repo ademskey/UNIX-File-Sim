@@ -1,0 +1,6 @@
+D /
+D /dir1
+F /dir1/file2
+D /dir1/dir2
+F /dir1/dir2/lastfile
+F /file1

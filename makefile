@@ -1,14 +1,14 @@
 prog: main.o commands.o
-	g++ -fopenmp -g main.o commands.o -o linux_sim
+	gcc -fopenmp -g pa0_caudle.o commands.o -o linux_sim
 
-main.o: main.c header.h
-	g++ -fopenmp -c -g -Wall -std=c++11 main.c
+main.o: pa0_caudle.c header.h
+	gcc -fopenmp -c -g -Wall -std=c11 pa0_caudle.c
 
 commands.o: commands.c commands.h
-	g++ -fopenmp -c -g -Wall -std=c++11 commands.c
+	gcc -fopenmp -c -g -Wall -std=c11 commands.c
 
 clean: 
-	-rm *.o
+	-rm *.o; rm linux_sim
 	
 run:
 	@./linux_sim

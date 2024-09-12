@@ -1,0 +1,8 @@
+D /
+D /level1
+D /level1/level2
+F /level1/level2/test3
+D /level1/level2/level3
+D /level1/test
+F /level1/testfile
+D /test_level_1
