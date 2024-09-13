@@ -86,6 +86,7 @@ int main() {
 						printf("Please provide a file name\n");
 						break;
 					}
+					// Open file and reload filesystem
 					FILE* infile = fopen(argument, "r");
 					reload(root, infile);
 					fclose(infile);
@@ -94,9 +95,12 @@ int main() {
 				//save
 				printf("Enter File Name: ");
 				
+				// Get file name
 				if (fgets(argument, sizeof(argument), stdin) != NULL) {
 					argument[strcspn(argument, "\n")] = 0; // Remove newline character (caused loop issue)
 					printf("Saving to %s\n", argument);
+
+					// Save to file
 					FILE *outfile = fopen(argument, "w");
 					if (outfile) {
 						save(root, outfile);
@@ -111,6 +115,7 @@ int main() {
 				//quit
 				printf("Enter Last Name: ");
 
+				// Get last name
 				if (fgets(lastname, sizeof(lastname), stdin) != NULL) 
 				{
 					lastname[strcspn(lastname, "\n")] = 0; // remove newline character 
@@ -121,6 +126,7 @@ int main() {
 					printf("Saving to %s\n", prefix);
 					printf("Exiting Simulation\n");
 
+					// Save and destroy filesystem
 					FILE *quitfile = fopen(prefix, "w");
 					if (quitfile) {
 						save(root, quitfile);
@@ -134,7 +140,6 @@ int main() {
 				else {
 					printf("Failed to read last name\n");
 				}
-				
 				break;
 
 				default:
